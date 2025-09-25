@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { MdHome, MdClose, MdTimeline } from "react-icons/md";
-import { useSidebarStore } from "../store/sidebarStore";
+import { useSidebarStore } from "../store/store";
 
 interface MenuItem {
   id: string;
@@ -77,7 +77,7 @@ export default function Sidebar() {
       </div>
 
       {/* 데스크톱 사이드바 */}
-      <aside className="hidden md:block w-52 bg-white h-screen border-r border-t border-gray-200">
+      <aside className="hidden md:block w-52 bg-white h-screen border-r border-t border-gray-100">
         <div className="p-6">
           <nav className="space-y-2">
             {menuItems.map((item) => (
