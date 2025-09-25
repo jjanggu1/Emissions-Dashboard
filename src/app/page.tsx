@@ -47,11 +47,14 @@ export default function Home() {
           <h1 className="text-2xl font-bold">대시보드</h1>
           <DashboardHeader />
         </header>
-        <main className=""></main>
+        <main className="px-4 py-4">
+          {/* 데이터 차트 */}
+          {/* 총 emissions 세로 bar (source별 색상으로 구분) */}
+          <div className="">
+            <TotalEmissions />
+          </div>
+        </main>
       </div>
-      {<TotalEmissions />}
-      {/* 데이터 차트 */}
-      {/* 총 emissions 세로 bar (source별 색상으로 구분) */}
       {/* 월 별 총 emissions 배출량 => Line Chart */}
       {/* 국가 별 총 emissions 배출량 => Doughnut Chart */}
       {/* 오른쪽 영역에 report timeline(최신순 post) */}

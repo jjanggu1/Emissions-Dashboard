@@ -22,7 +22,7 @@ const menuItems: MenuItem[] = [
     id: "reports",
     label: "탄소 리포트",
     icon: <MdTimeline className="w-6 h-6" />,
-    href: "/reports",
+    href: "/",
   },
 ];
 
