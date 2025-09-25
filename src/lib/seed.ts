@@ -1,16 +1,37 @@
-import type { Company, Post } from "@/types";
+import type { CompanyType, PostType } from "@/types";
 
-export const countries = [
-  { code: "US", name: "United States" },
-  { code: "DE", name: "Germany" },
-  { code: "KR", name: "South Korea" },
-  { code: "JP", name: "Japan" },
-  { code: "FR", name: "France" },
+// Seed data example
+/*
+export const companies: Company[] = [
+  {
+    id: "c1",
+    name: "Acme Corp",
+    country: "US",
+    emissions: [{ "yearMonth": "2024-01",  "emissions": 120}, { "yearMonth": "2024-02": "emissions": 110}, {"yearMonth": "2024-03": "emissions": 95 }]
+  },
+  {
+    id: "c2",
+    name: "Globex",
+    country: "DE",
+    emissions: [{ "yearMonth": "2024-01",  "emissions": 80}, { "yearMonth": "2024-02": "emissions": 105}, {"yearMonth": "2024-03": "emissions": 120 }]
+  }
 ];
+
+export const posts: Post[] = [
+  {
+    id: "p1",
+    title: "Sustainability Report",
+    resourceUid: "c1",
+    dateTime: "2024-02",
+    content: "Quarterly CO2 update"
+  }
+];
+*/
+
 
 // 1년치 월별 데이터 생성
 function generateEmissions(year: number, base: number) {
-  const sources = ["gasoline", "diesel", "lpg", "electricity"];
+  const sources = ["gasoline", "diesel", "lpg", "etc"];
   return Array.from({ length: 12 }, (_, i) => {
     const month = (i + 1).toString().padStart(2, "0");
     return {
@@ -21,7 +42,7 @@ function generateEmissions(year: number, base: number) {
   });
 }
 
-export const companies: Company[] = [
+export const companies: CompanyType[] = [
   {
     id: "c1",
     name: "Acme Corp",
@@ -69,7 +90,7 @@ export const companies: Company[] = [
   },
 ];
 
-export const posts: Post[] = [
+export const posts: PostType[] = [
   {
     id: "p1",
     title: "Sustainability Report Q1",
