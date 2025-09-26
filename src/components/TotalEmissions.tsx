@@ -131,17 +131,19 @@ export default function TotalEmissions() {
   }, [totalEmissions]);
 
   return (
-    <div className="w-full h-fit bg-white p-6 border border-gray-100 rounded-md shadow-sm">
-      <h1 className="text-lg font-bold">전체 배출량 현황</h1>
-      <p className="font-bold text-3xl py-4">
-        {totalEmissions}
-        <span className="text-sm text-gray-300 font-normal"> tCO2e</span>
-      </p>
-      <div className="w-[380px] md:w-full h-[40px] mb-4">
-        <canvas ref={canvasRef}></canvas>
+    <div className="w-full h-fit bg-white p-6 border border-gray-100 rounded-md shadow-sm block md:flex gap-4">
+      <div>
+        <h1 className="text-lg font-bold">전체 배출량 현황</h1>
+        <p className="font-bold text-3xl py-4">
+          {totalEmissions}
+          <span className="text-sm text-gray-300 font-normal"> tCO2e</span>
+        </p>
+        <div className="w-[380px] md:w-full h-[40px] mb-4">
+          <canvas ref={canvasRef}></canvas>
+        </div>
       </div>
 
-      <div className="w-full h-full border border-gray-100 rounded-md px-8 py-2 font-semibold text-sm">
+      <div className="w-full h-full border border-gray-100 rounded-md px-4 py-2 font-semibold text-sm">
         <div className="flex items-center justify-between py-2 text-[#49BF52]">
           <span className="text-lg flex-2 text-black">gasoline</span>{" "}
           <span className="flex-1">{extractEmissionsBySource("gasoline")}</span>
