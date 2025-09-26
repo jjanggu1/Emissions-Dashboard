@@ -16,7 +16,7 @@ import DashboardHeader from "@/components/DashboardHeader";
 export default function Home() {
   const { setPosts } = usePostsStore();
   const { setCompanies } = useCompanyStore();
-  const { setBaseYears } = useBaseYearsStore();
+  const { setBaseYears, setBaseYearsList } = useBaseYearsStore();
 
   // 데이터에서 기준연도 추출
   const extractYears = (companiesData: CompanyType[]) => {
@@ -27,7 +27,7 @@ export default function Home() {
         )
       ),
     ];
-    setBaseYears(years);
+    setBaseYearsList(years);
     console.log(years);
   };
 

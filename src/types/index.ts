@@ -1,7 +1,9 @@
 // Main Data Types
 export type BaseYearsType = {
-    baseYears: string[];
-    setBaseYears: (baseYears: string[]) => void;
+    baseYears: string;
+    baseYearsList: string[];
+    setBaseYears: (baseYears: string) => void;
+    setBaseYearsList: (baseYearsList: string[]) => void;
   };
 
 export type GhgEmissionType = {

@@ -11,8 +11,10 @@ export const useSidebarStore = create<SidebarStore>((set) => ({
 
 // Main(ChartDashboard) Store
 export const useBaseYearsStore = create<BaseYearsType>((set) => ({
-  baseYears: [],
+  baseYears: "2025",
+  baseYearsList: [],
   setBaseYears: (baseYears) => set({ baseYears }),
+  setBaseYearsList: (baseYearsList) => set({ baseYearsList }),
 }));
 
 export const useCompanyStore = create<CompaniesType>((set) => ({
