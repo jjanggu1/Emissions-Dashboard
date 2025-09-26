@@ -131,7 +131,7 @@ export default function TotalEmissions() {
   }, [totalEmissions]);
 
   return (
-    <div className="w-full h-full md:w-1/2 lg:w-1/3 bg-white p-6 border border-gray-100 rounded-md shadow-sm">
+    <div className="w-full h-fit bg-white p-6 border border-gray-100 rounded-md shadow-sm">
       <h1 className="text-lg font-bold">전체 배출량 현황</h1>
       <p className="font-bold text-3xl py-4">
         {totalEmissions}

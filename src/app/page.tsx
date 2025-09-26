@@ -12,11 +12,12 @@ import {
 
 import { CompanyType } from "@/types";
 import DashboardHeader from "@/components/DashboardHeader";
+import MonthlyEmissions from "@/components/MonthlyEmissions";
 
 export default function Home() {
   const { setPosts } = usePostsStore();
   const { setCompanies } = useCompanyStore();
-  const { setBaseYears, setBaseYearsList } = useBaseYearsStore();
+  const { setBaseYearsList } = useBaseYearsStore();
 
   // 데이터에서 기준연도 추출
   const extractYears = (companiesData: CompanyType[]) => {
@@ -47,16 +48,23 @@ export default function Home() {
           <h1 className="text-2xl font-bold">대시보드</h1>
           <DashboardHeader />
         </header>
-        <main className="px-4 py-4">
+        <main className="w-full md:flex md:flex-col gap-4 px-4 py-4">
           {/* 데이터 차트 */}
-          {/* 총 emissions 세로 bar (source별 색상으로 구분) */}
-          <div className="">
-            <TotalEmissions />
+          <div>
+            <div>
+              <TotalEmissions />
+            </div>
+          </div>
+          <div className="mt-4">
+            <div>
+              <MonthlyEmissions />
+            </div>
           </div>
         </main>
       </div>
       {/* 월 별 총 emissions 배출량 => Line Chart */}
       {/* 국가 별 총 emissions 배출량 => Doughnut Chart */}
+      {/* 연도 별 총 감축량 => Line Chart */}
       {/* 오른쪽 영역에 report timeline(최신순 post) */}
     </div>
   );
