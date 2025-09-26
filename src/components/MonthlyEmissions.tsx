@@ -212,9 +212,7 @@ export default function MonthlyEmissions() {
   return (
     <div className="w-full h-fit bg-white p-6 border border-gray-100 rounded-lg shadow-sm">
       <div className="mb-6">
-        <h1 className="text-xl font-bold text-gray-900 mb-2">
-          월 별 총 배출량
-        </h1>
+        <h1 className="text-xl font-bold text-gray-900 mb-2">월 별 배출량</h1>
         <p className="text-sm text-gray-600">
           기준연도: <span className="font-semibold">{baseYears}년</span>
         </p>
