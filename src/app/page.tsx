@@ -12,11 +12,15 @@ import {
 
 import { CompanyType } from "@/types";
 import DashboardHeader from "@/components/DashboardHeader";
+import MonthlyEmissions from "@/components/MonthlyEmissions";
+import CountryEmissions from "@/components/CountryEmissions";
+import YearlyEmission from "@/components/YearlyEmission";
+import CarbonReport from "@/components/CarbonReport";
 
 export default function Home() {
   const { setPosts } = usePostsStore();
   const { setCompanies } = useCompanyStore();
-  const { setBaseYears } = useBaseYearsStore();
+  const { setBaseYearsList } = useBaseYearsStore();
 
   // 데이터에서 기준연도 추출
   const extractYears = (companiesData: CompanyType[]) => {
@@ -27,34 +31,43 @@ export default function Home() {
         )
       ),
     ];
-    setBaseYears(years);
-    console.log(years);
+    setBaseYearsList(years);
   };
 
   useEffect(() => {
     Promise.all([fetchCompanies(), fetchPosts()]).then(([companies, posts]) => {
       setCompanies(companies);
-      console.log(companies);
       setPosts(posts);
       extractYears(companies);
     });
   }, []);
 
   return (
-    <div className="w-full min-h-screen border-t border-gray-100 bg-gray-100">
+    <div className="w-full h-full border-t border-gray-100 bg-gray-100">
       <div>
         <header className="bg-white px-4 pt-4">
           <h1 className="text-2xl font-bold">대시보드</h1>
           <DashboardHeader />
         </header>
-        <main className=""></main>
+        <main className="w-full md:flex gap-4 px-4 py-4">
+          {/* 데이터 차트 */}
+          <div className="w-full flex flex-col gap-4 flex-3">
+            <div>
+              <div className="block md:flex gap-4">
+                <TotalEmissions />
+                <CountryEmissions />
+              </div>
+            </div>
+            <div className="mt-4 ">
+              <div className="block md:flex gap-4">
+                <MonthlyEmissions />
+                <YearlyEmission />
+              </div>
+            </div>
+          </div>
+          <CarbonReport />
+        </main>
       </div>
-      {<TotalEmissions />}
-      {/* 데이터 차트 */}
-      {/* 총 emissions 세로 bar (source별 색상으로 구분) */}
-      {/* 월 별 총 emissions 배출량 => Line Chart */}
-      {/* 국가 별 총 emissions 배출량 => Doughnut Chart */}
-      {/* 오른쪽 영역에 report timeline(최신순 post) */}
     </div>
   );
 }
