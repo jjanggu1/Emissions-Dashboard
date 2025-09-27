@@ -8,7 +8,7 @@
 
 ### 1. 프로젝트 클론
 ```bash
-git clone https://github.com/FC-DEV3-Final-Project/zoop-frontend.git
+git clone https://github.com/jjanggu1/Emissions-Dashboard.git
 ```
 ### 2. 패키지 설치
 ```
