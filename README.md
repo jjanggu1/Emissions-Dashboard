@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 탄소 관리 대시보드
 
-## Getting Started
+## 프로젝트 설명
+기업별 탄소 배출량을 시각화하고 감축 목표를 관리할 수 있는 대시보드 프로젝트입니다.
 
-First, run the development server:
 
+## 실행 방법
+
+### 1. 프로젝트 클론
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/FC-DEV3-Final-Project/zoop-frontend.git
 ```
+### 2. 패키지 설치
+```
+npm install
+```
+### 3. 로컬 서버 실행
+```
+npm run dev
+```
+### 4. 로컬 서버 실행 후 브라우저에서 http://localhost:3000 에 접속
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 개발환경
+Framework: Next 15.5.4 + React 19.1.0 + TypeScript 5
+Styling: Tailwind CSS
+State Management: Zustand
+Data Fetching: Fake Api
+Library: Chart.js(차트), react-icons(아이콘)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## 프로젝트 컨벤션
+### 브랜치 전략
+**main**, **develop**, **feature** 브랜치 사용
+* main : 배포 가능한 상태만을 관리하는 브랜치
+* develop : 개발 단계에서 통합 역할을 담당하는 브랜치
+* feature : 새롭게 추가되거나 변경되는 기능을 개발
 
-To learn more about Next.js, take a look at the following resources:
+ 
+### 커밋 컨벤션
+* `feat` : 새로운 기능 추가
+* `fix` : 버그 수정
+* `docs` : 문서 수정
+* `design` : 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
+* `refactor` : 코드 리펙토링
+* `chore` : 빌드 업무 수정, 패키지 매니저 수정
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 폴더구조
+```
+src/
+├── app/
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx: 한 페이지로 구성
+├── components/
+│   ├── CarbonReport.tsx: 탄소 리포트 컴포넌트
+│   ├── CountryEmissions.tsx: 국가 별 배출량 컴포넌트(도넛 차트)
+│   ├── CutEmissions.tsx: 감축률 컴포넌트(도넛 차트)
+│   ├── DashboardHeader.tsx: 대시보드 헤더 컴포넌트(기준년도 선택)
+│   ├── Header.tsx: 헤더 컴포넌트
+│   ├── MonthlyEmissions.tsx: 월 별 배출량 컴포넌트(라인 차트)
+│   ├── Sidebar.tsx: 사이드바 컴포넌트
+│   ├── TotalEmissions.tsx: 전체 배출량 현황 컴포넌트
+│   └── YearlyEmission.tsx: 감축 목표 컴포넌트(라인 차트)
+├── lib/
+│   ├── api.ts: Fake API
+│   └── seed.ts: Database
+├── store/
+│   └── store.ts: SidebarStore(사이드 바), BaseYearsStore(기준년도), CompanyStore(대시보드 핵심 데이터), PostsStore(탄소 리포트 데이터)
+└── types/
+    └── index.ts: 전역 상태로 사용되는 데이터 타입 지정
+```
