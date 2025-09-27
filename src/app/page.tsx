@@ -15,6 +15,7 @@ import DashboardHeader from "@/components/DashboardHeader";
 import MonthlyEmissions from "@/components/MonthlyEmissions";
 import CountryEmissions from "@/components/CountryEmissions";
 import YearlyEmission from "@/components/YearlyEmission";
+import CarbonReport from "@/components/CarbonReport";
 
 export default function Home() {
   const { setPosts } = usePostsStore();
@@ -50,24 +51,25 @@ export default function Home() {
           <h1 className="text-2xl font-bold">대시보드</h1>
           <DashboardHeader />
         </header>
-        <main className="w-full md:flex md:flex-col gap-4 px-4 py-4">
+        <main className="w-full md:flex gap-4 px-4 py-4">
           {/* 데이터 차트 */}
-          <div>
-            <div className="block md:flex gap-4">
-              <TotalEmissions />
-              <CountryEmissions />
+          <div className="w-full flex flex-col gap-4 flex-3">
+            <div>
+              <div className="block md:flex gap-4">
+                <TotalEmissions />
+                <CountryEmissions />
+              </div>
+            </div>
+            <div className="mt-4 ">
+              <div className="block md:flex gap-4">
+                <MonthlyEmissions />
+                <YearlyEmission />
+              </div>
             </div>
           </div>
-          <div className="mt-4 ">
-            <div className="block md:flex gap-4">
-              <MonthlyEmissions />
-              <YearlyEmission />
-            </div>
-          </div>
+          <CarbonReport />
         </main>
       </div>
-      {/* 연도 별 총 감축량 => Line Chart */}
-      {/* 오른쪽 영역에 report timeline(최신순 post) */}
     </div>
   );
 }
