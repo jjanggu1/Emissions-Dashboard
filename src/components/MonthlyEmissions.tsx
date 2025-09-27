@@ -210,14 +210,14 @@ export default function MonthlyEmissions() {
   }, [companies, baseYears]);
 
   return (
-    <div className="w-full h-fit bg-white p-6 border border-gray-100 rounded-lg shadow-sm">
-      <div className="mb-6">
+    <div className="w-full h-fit max-h-[430px] bg-white p-6 border border-gray-100 rounded-lg shadow-sm">
+      <div className="">
         <h1 className="text-xl font-bold text-gray-900 mb-2">월 별 배출량</h1>
         <p className="text-sm text-gray-600">
           기준연도: <span className="font-semibold">{baseYears}년</span>
         </p>
       </div>
-      <div className="max-w-[400px] md:max-w-full  h-[450px] relative ">
+      <div className="max-w-[400px] md:max-w-full  h-[330px] relative ">
         <canvas ref={canvasRef}></canvas>
       </div>
     </div>
