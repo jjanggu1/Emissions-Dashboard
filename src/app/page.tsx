@@ -14,6 +14,7 @@ import { CompanyType } from "@/types";
 import DashboardHeader from "@/components/DashboardHeader";
 import MonthlyEmissions from "@/components/MonthlyEmissions";
 import CountryEmissions from "@/components/CountryEmissions";
+import YearlyEmission from "@/components/YearlyEmission";
 
 export default function Home() {
   const { setPosts } = usePostsStore();
@@ -43,7 +44,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen border-t border-gray-100 bg-gray-100">
+    <div className="w-full h-full border-t border-gray-100 bg-gray-100">
       <div>
         <header className="bg-white px-4 pt-4">
           <h1 className="text-2xl font-bold">대시보드</h1>
@@ -57,9 +58,10 @@ export default function Home() {
               <CountryEmissions />
             </div>
           </div>
-          <div className="mt-4">
-            <div>
+          <div className="mt-4 ">
+            <div className="block md:flex gap-4">
               <MonthlyEmissions />
+              <YearlyEmission />
             </div>
           </div>
         </main>
