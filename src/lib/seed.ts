@@ -48,8 +48,9 @@ export const companies: CompanyType[] = [
     name: "Acme Corp",
     country: "US",
     emissions: [
-      ...generateEmissions(2024, 120),
-      ...generateEmissions(2025, 130),
+      ...generateEmissions(2023, 1800),
+      ...generateEmissions(2024, 1400),
+      ...generateEmissions(2025, 1100),
     ],
   },
   {
@@ -57,8 +58,9 @@ export const companies: CompanyType[] = [
     name: "Globex",
     country: "DE",
     emissions: [
-      ...generateEmissions(2024, 90),
-      ...generateEmissions(2025, 100),
+      ...generateEmissions(2023, 1600),
+      ...generateEmissions(2024, 1200),
+      ...generateEmissions(2025, 1100),
     ],
   },
   {
@@ -66,8 +68,9 @@ export const companies: CompanyType[] = [
     name: "Initech",
     country: "KR",
     emissions: [
-      ...generateEmissions(2024, 70),
-      ...generateEmissions(2025, 85),
+      ...generateEmissions(2023, 1500),
+      ...generateEmissions(2024, 1000),
+      ...generateEmissions(2025, 800),
     ],
   },
   {
@@ -75,8 +78,9 @@ export const companies: CompanyType[] = [
     name: "Umbrella Corp",
     country: "JP",
     emissions: [
-      ...generateEmissions(2024, 150),
-      ...generateEmissions(2025, 160),
+      ...generateEmissions(2023, 1800),
+      ...generateEmissions(2024, 1600),
+      ...generateEmissions(2025, 1200),
     ],
   },
   {
@@ -84,8 +88,9 @@ export const companies: CompanyType[] = [
     name: "Soylent Industries",
     country: "FR",
     emissions: [
-      ...generateEmissions(2024, 60),
-      ...generateEmissions(2025, 75),
+      ...generateEmissions(2023, 1700),
+      ...generateEmissions(2024, 1300),
+      ...generateEmissions(2025, 1100),
     ],
   },
 ];
