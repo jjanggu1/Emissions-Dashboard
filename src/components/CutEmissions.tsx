@@ -16,7 +16,6 @@ export default function CutEmissions({
 
   useEffect(() => {
     if (!canvasRef.current) return;
-    console.log(thisYear, goalEmission);
 
     const chart = new Chart(canvasRef.current, {
       type: "doughnut",
@@ -53,7 +52,6 @@ export default function CutEmissions({
       chart.destroy();
     };
   }, [thisYear, goalEmission]);
-  console.log(thisYear, goalEmission);
 
   return (
     <div className="flex justify-between gap-4 border-2 border-[#CFEDD0] rounded-md p-4 w-full">

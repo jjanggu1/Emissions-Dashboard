@@ -29,12 +29,10 @@ export default function YearlyEmission() {
     const extraValues = [26000, 17000].map((v) => v * 0.52);
     return [...goalEmission, ...extraValues];
   };
-  console.log(makeGoalEmission());
 
   useEffect(() => {
     extractYearlyEmissions();
   }, [baseYearsList, companies]);
-  console.log(yearlyEmissions);
 
   useEffect(() => {
     if (!canvasRef.current || !baseYearsList || !companies) return;

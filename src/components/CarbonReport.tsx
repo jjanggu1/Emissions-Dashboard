@@ -22,8 +22,6 @@ export default function CarbonReport() {
     return company?.name;
   };
 
-  console.log(newsPosts);
-
   return (
     <div className="w-full h-screen max-h-[calc(100vh-200px)] overflow-y-auto flex-1">
       <h1 className="text-2xl font-bold">탄소 리포트</h1>

@@ -32,13 +32,11 @@ export default function Home() {
       ),
     ];
     setBaseYearsList(years);
-    console.log(years);
   };
 
   useEffect(() => {
     Promise.all([fetchCompanies(), fetchPosts()]).then(([companies, posts]) => {
       setCompanies(companies);
-      console.log(companies);
       setPosts(posts);
       extractYears(companies);
     });
