@@ -26,7 +26,7 @@ export default function CarbonReport() {
     <div className="w-full h-screen max-h-[calc(100vh-200px)] overflow-y-auto flex-1">
       <h1 className="text-2xl font-bold">탄소 리포트</h1>
       {newsPosts?.map((post) => (
-        <div className="flex flex-col gap-2 max-w-[400px] mb-4">
+        <div key={post.id} className="flex flex-col gap-2 max-w-[400px] mb-4">
           <h2 className="mt-4 font-semibold">
             {formatCompanyName(post.resourceUid)}
           </h2>
