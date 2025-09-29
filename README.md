@@ -22,11 +22,11 @@ npm run dev
 
 
 ## 개발환경
-Framework: Next 15.5.4 + React 19.1.0 + TypeScript 5
-Styling: Tailwind CSS
-State Management: Zustand
-Data Fetching: Fake Api
-Library: Chart.js(차트), react-icons(아이콘)
+Framework: Next 15.5.4 + React 19.1.0 + TypeScript 5<br>
+Styling: Tailwind CSS<br>
+State Management: Zustand<br>
+Data Fetching: Fake Api<br>
+Library: Chart.js(차트), react-icons(아이콘)<br>
 
 
 ## 프로젝트 컨벤션
